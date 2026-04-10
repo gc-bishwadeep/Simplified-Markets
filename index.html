@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Simplified Markets – Carousel Generator</title>
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<div class="app">
+
+  <div class="topbar">
+    <div class="brand">
+      <img id="nav-logo" src="logo.png" alt="SM"/>
+      <div>
+        <div class="brand-name">SIMPLIFIED MARKETS</div>
+        <div class="brand-sub">Daily Carousel Generator · Instagram 4:5</div>
+      </div>
+    </div>
+    <div class="pill"><span class="dot"></span>AI POWERED · READY</div>
+  </div>
+
+  <div class="controls">
+    <div class="cg">
+      <label>Topic</label>
+      <select id="topicSel">
+        <option value="auto">🎲 Auto — Next in Series</option>
+        <optgroup label="📘 Module 1 — What Is the Market? (Posts 1–6)">
+          <option value="0">Post 1 · What Is the Stock Market?</option>
+          <option value="1">Post 2 · What Is a Stock or Share?</option>
+          <option value="2">Post 3 · What Is a Stock Exchange? (NSE &amp; BSE)</option>
+          <option value="3">Post 4 · Who Are the Players in the Market?</option>
+          <option value="4">Post 5 · How Does Trading Actually Work?</option>
+          <option value="5">Post 6 · What Is SEBI and Why It Matters?</option>
+        </optgroup>
+        <optgroup label="📗 Module 2 — Market Basics (Posts 7–14)">
+          <option value="6">Post 7 · What Is the NIFTY 50?</option>
+          <option value="7">Post 8 · What Is the SENSEX?</option>
+          <option value="8">Post 9 · What Is Market Capitalisation?</option>
+          <option value="9">Post 10 · What Is an IPO?</option>
+          <option value="10">Post 11 · What Is a Dividend?</option>
+          <option value="11">Post 12 · What Is a Demat Account?</option>
+          <option value="12">Post 13 · What Is a Portfolio?</option>
+          <option value="13">Post 14 · Buy vs Sell vs Hold</option>
+        </optgroup>
+        <optgroup label="📙 Module 3 — Reading the Market (Posts 15–22)">
+          <option value="14">Post 15 · Bulls vs Bears Explained</option>
+          <option value="15">Post 16 · How to Read a Stock Price</option>
+          <option value="16">Post 17 · Market Hours in India</option>
+          <option value="17">Post 18 · What Is Volume and Liquidity?</option>
+          <option value="18">Post 19 · What Is an ETF?</option>
+          <option value="19">Post 20 · What Is a Mutual Fund?</option>
+          <option value="20">Post 21 · What Is an Index Fund?</option>
+          <option value="21">Post 22 · Risk vs Reward — The Golden Rule</option>
+        </optgroup>
+        <optgroup label="📒 Module 4 — Trading Fundamentals (Posts 23–32)">
+          <option value="22">Post 23 · Types of Orders: Market, Limit, Stop Loss</option>
+          <option value="23">Post 24 · Bid-Ask Spread Explained</option>
+          <option value="24">Post 25 · What Is the Circuit Breaker Rule?</option>
+          <option value="25">Post 26 · What Is Short Selling?</option>
+          <option value="26">Post 27 · What Is Intraday Trading?</option>
+          <option value="27">Post 28 · What Is Delivery Trading?</option>
+          <option value="28">Post 29 · What Is Swing Trading?</option>
+          <option value="29">Post 30 · What Is Position Sizing?</option>
+          <option value="30">Post 31 · Stop Loss and Take Profit Strategy</option>
+          <option value="31">Post 32 · What Is a Trading Journal?</option>
+        </optgroup>
+        <optgroup label="📕 Module 5 — Technical Analysis (Posts 33–44)">
+          <option value="32">Post 33 · What Is Technical Analysis?</option>
+          <option value="33">Post 34 · Candlestick Charts Explained</option>
+          <option value="34">Post 35 · Support and Resistance Levels</option>
+          <option value="35">Post 36 · Trend Lines — How to Draw Them</option>
+          <option value="36">Post 37 · Moving Averages: SMA vs EMA</option>
+          <option value="37">Post 38 · What Is RSI?</option>
+          <option value="38">Post 39 · What Is MACD?</option>
+          <option value="39">Post 40 · Bollinger Bands Explained</option>
+          <option value="40">Post 41 · Head and Shoulders Pattern</option>
+          <option value="41">Post 42 · Double Top and Double Bottom</option>
+          <option value="42">Post 43 · Fibonacci Retracement</option>
+          <option value="43">Post 44 · Cup and Handle Pattern</option>
+        </optgroup>
+        <optgroup label="📓 Module 6 — Fundamental Analysis (Posts 45–52)">
+          <option value="44">Post 45 · Fundamental vs Technical Analysis</option>
+          <option value="45">Post 46 · What Is P/E Ratio?</option>
+          <option value="46">Post 47 · How to Read an Annual Report</option>
+          <option value="47">Post 48 · What Is EPS?</option>
+          <option value="48">Post 49 · What Is Free Cash Flow?</option>
+          <option value="49">Post 50 · What Is Debt-to-Equity Ratio?</option>
+          <option value="50">Post 51 · How to Read Earnings Reports</option>
+          <option value="51">Post 52 · Sector Rotation Explained</option>
+        </optgroup>
+        <optgroup label="🚀 Module 7 — Advanced and Viral (Posts 53–65)">
+          <option value="52">Post 53 · Options — Calls and Puts</option>
+          <option value="53">Post 54 · What Is Margin Trading?</option>
+          <option value="54">Post 55 · Psychology of Trading</option>
+          <option value="55">Post 56 · Dollar Cost Averaging (SIP in Stocks)</option>
+          <option value="56">Post 57 · What Is Compound Interest?</option>
+          <option value="57">Post 58 · Value Investing vs Growth Investing</option>
+          <option value="58">Post 59 · Why Do Markets Crash?</option>
+          <option value="59">Post 60 · How the RBI Moves the Market</option>
+          <option value="60">Post 61 · How to Spot a Pump and Dump</option>
+          <option value="61">Post 62 · What Is Insider Trading?</option>
+          <option value="62">Post 63 · Biases That Destroy Wealth</option>
+          <option value="63">Post 64 · How to Build Your First Investment Plan</option>
+          <option value="64">Post 65 · The 5 Golden Rules of Investing in India</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="cg">
+      <label>Post Number</label>
+      <input type="number" id="postNum" value="" placeholder="Auto"/>
+    </div>
+    <button class="gbtn" id="genBtn" onclick="generate()">⚡ GENERATE</button>
+  </div>
+
+  <div class="prog-wrap" id="progWrap">
+    <div class="prog-lbl" id="progLbl">Initialising…</div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  </div>
+
+  <div class="out-wrap" id="outWrap">
+    <div class="out-head">
+      <div class="out-title" id="outTitle">TODAY'S CAROUSEL</div>
+      <button class="gbtn2" id="dlBtn" onclick="downloadAll()">⬇ Download All 6 Slides</button>
+    </div>
+    <div class="slides-row" id="slidesRow"></div>
+  </div>
+
+  <div class="cap-panel" id="capPanel">
+    <div class="cap-head">
+      <div>
+        <div class="cap-label">CAPTION + HASHTAGS</div>
+        <div class="cap-title">COPY &amp; PASTE WHEN YOU POST</div>
+      </div>
+      <button class="copy-btn" id="copyBtn" onclick="copyCaption()">📋 COPY</button>
+    </div>
+    <div class="cap-body" id="capBody"></div>
+    <div class="info-box">
+      <div class="info-label">📲 HOW TO POST DAILY TO INSTAGRAM + FACEBOOK</div>
+      <div class="info-body">
+        <strong style="color:var(--teal)">①</strong> Download all 6 slides (button above)<br>
+        <strong style="color:var(--teal)">②</strong> Copy the caption above<br>
+        <strong style="color:var(--gold)">③</strong> Open <strong>Meta Business Suite</strong> — free at business.facebook.com<br>
+        <strong style="color:var(--gold)">④</strong> Create carousel → upload slides in order → paste caption<br>
+        <strong style="color:var(--gold)">⑤</strong> Schedule for <strong>8–10 AM or 6–8 PM IST</strong><br>
+        ✅ FB page linked to Instagram = auto-posts to both simultaneously
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
