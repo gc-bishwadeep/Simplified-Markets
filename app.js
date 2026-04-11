@@ -297,27 +297,46 @@ async function downloadAll(){
   const btn = document.getElementById('dlBtn');
   btn.disabled = true;
 
-  for(let i=0; i<6; i++){
-    btn.textContent = `⏳ Downloading ${i+1}/6…`;
-    try{
+  try {
+    // Slide dimensions: 432 x 540 px
+    // PDF page size: same ratio — use mm (432/540 * 100 = 80 x 100mm)
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: [108, 135]   // 432x540 at 4px per mm = 108x135 mm
+    });
+
+    for(let i = 0; i < 6; i++){
+      btn.textContent = `⏳ Rendering slide ${i+1} of 6…`;
+
       const el = document.getElementById('slide-'+i);
-      const canvas = await html2canvas(el,{
-        scale:3,
-        useCORS:true,
-        allowTaint:false,
-        backgroundColor:'#0D1B35',
-        logging:false,
-        width:432, height:540
+      const canvas = await html2canvas(el, {
+        scale: 3,
+        useCORS: true,
+        allowTaint: false,
+        backgroundColor: '#0D1B35',
+        logging: false,
+        width: 432,
+        height: 540
       });
-      const link = document.createElement('a');
-      link.download = `SM-Post-slide-${i+1}.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-      await new Promise(r=>setTimeout(r,600));
-    } catch(e){
-      console.error('Slide '+i+' error:', e);
+
+      const imgData = canvas.toDataURL('image/jpeg', 0.92);
+
+      if(i > 0) pdf.addPage([108, 135], 'portrait');
+      pdf.addImage(imgData, 'JPEG', 0, 0, 108, 135);
+
+      await new Promise(r => setTimeout(r, 300));
     }
+
+    btn.textContent = '💾 Saving PDF…';
+    pdf.save('SimplifiedMarkets-Carousel.pdf');
+
+  } catch(e) {
+    console.error('PDF error:', e);
+    alert('Error creating PDF: ' + e.message);
   }
-  btn.textContent = '⬇ Download All 6 Slides';
+
+  btn.textContent = '⬇ Download All 6 Slides (PDF)';
   btn.disabled = false;
 }
