@@ -26,14 +26,21 @@ function getAutoIdx(){ let i=parseInt(localStorage.getItem('sm_idx')||'0'); retu
 function advanceIdx(){ localStorage.setItem('sm_idx',(getAutoIdx()+1)%TOPICS.length); }
 function setP(pct,txt){ document.getElementById('progFill').style.width=pct+'%'; document.getElementById('progLbl').textContent=txt; }
 
-async function callAI(sys,usr){
-  const r=await fetch("https://api.anthropic.com/v1/messages",{
-    method:"POST", headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1400,system:sys,messages:[{role:"user",content:usr}]})
+const WORKER_URL = 'https://sm-proxy.hello-simplifiedmarkets.workers.dev';
+
+async function callAI(sys, usr){
+  const r = await fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ system: sys, user: usr })
   });
-  const d=await r.json();
-  if(d.error) throw new Error(d.error.message);
-  return d.content[0].text;
+  if(!r.ok){
+    const err = await r.text();
+    throw new Error('Worker error ' + r.status + ': ' + err);
+  }
+  const d = await r.json();
+  if(d.error) throw new Error(d.error);
+  return d.text;
 }
 
 async function generate(){
