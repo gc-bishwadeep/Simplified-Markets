@@ -6,7 +6,6 @@
 <title>Simplified Markets – Carousel Generator</title>
 <link rel="stylesheet" href="style.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 <div class="app">
@@ -27,84 +26,151 @@
       <label>Topic</label>
       <select id="topicSel">
         <option value="auto">🎲 Auto — Next in Series</option>
-        <optgroup label="📘 Module 1 — What Is the Market? (Posts 1–6)">
+        <optgroup label="📘 Module 1 — What Is the Market? (Posts 1–8)">
           <option value="0">Post 1 · What Is the Stock Market?</option>
           <option value="1">Post 2 · What Is a Stock or Share?</option>
-          <option value="2">Post 3 · What Is a Stock Exchange? (NSE &amp; BSE)</option>
-          <option value="3">Post 4 · Who Are the Players in the Market?</option>
+          <option value="2">Post 3 · What Is a Stock Exchange? (NSE and BSE)</option>
+          <option value="3">Post 4 · Who Are the Players in the Stock Market?</option>
           <option value="4">Post 5 · How Does Trading Actually Work?</option>
-          <option value="5">Post 6 · What Is SEBI and Why It Matters?</option>
+          <option value="5">Post 6 · What Is SEBI and Why Does It Matter?</option>
+          <option value="6">Post 7 · What Is a Bull Market and Bear Market?</option>
+          <option value="7">Post 8 · What Is Market Sentiment?</option>
         </optgroup>
-        <optgroup label="📗 Module 2 — Market Basics (Posts 7–14)">
-          <option value="6">Post 7 · What Is the NIFTY 50?</option>
-          <option value="7">Post 8 · What Is the SENSEX?</option>
-          <option value="8">Post 9 · What Is Market Capitalisation?</option>
-          <option value="9">Post 10 · What Is an IPO?</option>
-          <option value="10">Post 11 · What Is a Dividend?</option>
-          <option value="11">Post 12 · What Is a Demat Account?</option>
-          <option value="12">Post 13 · What Is a Portfolio?</option>
-          <option value="13">Post 14 · Buy vs Sell vs Hold</option>
+        <optgroup label="📗 Module 2 — Indian Market Foundations (Posts 9–18)">
+          <option value="8">Post 9 · What Is the NIFTY 50?</option>
+          <option value="9">Post 10 · What Is the SENSEX?</option>
+          <option value="10">Post 11 · What Is Market Capitalisation?</option>
+          <option value="11">Post 12 · What Is an IPO?</option>
+          <option value="12">Post 13 · What Is a Demat Account?</option>
+          <option value="13">Post 14 · What Is a Trading Account?</option>
+          <option value="14">Post 15 · What Is a Broker and How to Choose One?</option>
+          <option value="15">Post 16 · What Are Market Timings in India?</option>
+          <option value="16">Post 17 · What Is the Difference Between NSE and BSE?</option>
+          <option value="17">Post 18 · What Is SEBI and How Does It Protect Investors?</option>
         </optgroup>
-        <optgroup label="📙 Module 3 — Reading the Market (Posts 15–22)">
-          <option value="14">Post 15 · Bulls vs Bears Explained</option>
-          <option value="15">Post 16 · How to Read a Stock Price</option>
-          <option value="16">Post 17 · Market Hours in India</option>
-          <option value="17">Post 18 · What Is Volume and Liquidity?</option>
-          <option value="18">Post 19 · What Is an ETF?</option>
-          <option value="19">Post 20 · What Is a Mutual Fund?</option>
-          <option value="20">Post 21 · What Is an Index Fund?</option>
-          <option value="21">Post 22 · Risk vs Reward — The Golden Rule</option>
+        <optgroup label="📙 Module 3 — Stock Basics (Posts 19–28)">
+          <option value="18">Post 19 · What Is a Dividend?</option>
+          <option value="19">Post 20 · What Is a Bonus Share?</option>
+          <option value="20">Post 21 · What Is a Stock Split?</option>
+          <option value="21">Post 22 · What Is a Rights Issue?</option>
+          <option value="22">Post 23 · What Is a Portfolio?</option>
+          <option value="23">Post 24 · What Is Diversification?</option>
+          <option value="24">Post 25 · Buy vs Sell vs Hold</option>
+          <option value="25">Post 26 · Large Cap, Mid Cap and Small Cap</option>
+          <option value="26">Post 27 · What Are Penny Stocks?</option>
+          <option value="27">Post 28 · Equity vs Debt</option>
         </optgroup>
-        <optgroup label="📒 Module 4 — Trading Fundamentals (Posts 23–32)">
-          <option value="22">Post 23 · Types of Orders: Market, Limit, Stop Loss</option>
-          <option value="23">Post 24 · Bid-Ask Spread Explained</option>
-          <option value="24">Post 25 · What Is the Circuit Breaker Rule?</option>
-          <option value="25">Post 26 · What Is Short Selling?</option>
-          <option value="26">Post 27 · What Is Intraday Trading?</option>
-          <option value="27">Post 28 · What Is Delivery Trading?</option>
-          <option value="28">Post 29 · What Is Swing Trading?</option>
-          <option value="29">Post 30 · What Is Position Sizing?</option>
-          <option value="30">Post 31 · Stop Loss and Take Profit Strategy</option>
-          <option value="31">Post 32 · What Is a Trading Journal?</option>
+        <optgroup label="📒 Module 4 — Types of Investing (Posts 29–36)">
+          <option value="28">Post 29 · What Is Long-Term Investing?</option>
+          <option value="29">Post 30 · What Is Short-Term Trading?</option>
+          <option value="30">Post 31 · What Is Intraday Trading?</option>
+          <option value="31">Post 32 · What Is Delivery Trading?</option>
+          <option value="32">Post 33 · What Is Swing Trading?</option>
+          <option value="33">Post 34 · What Is Positional Trading?</option>
+          <option value="34">Post 35 · What Is a Mutual Fund?</option>
+          <option value="35">Post 36 · What Is an Index Fund?</option>
         </optgroup>
-        <optgroup label="📕 Module 5 — Technical Analysis (Posts 33–44)">
-          <option value="32">Post 33 · What Is Technical Analysis?</option>
-          <option value="33">Post 34 · Candlestick Charts Explained</option>
-          <option value="34">Post 35 · Support and Resistance Levels</option>
-          <option value="35">Post 36 · Trend Lines — How to Draw Them</option>
-          <option value="36">Post 37 · Moving Averages: SMA vs EMA</option>
-          <option value="37">Post 38 · What Is RSI?</option>
-          <option value="38">Post 39 · What Is MACD?</option>
-          <option value="39">Post 40 · Bollinger Bands Explained</option>
-          <option value="40">Post 41 · Head and Shoulders Pattern</option>
-          <option value="41">Post 42 · Double Top and Double Bottom</option>
-          <option value="42">Post 43 · Fibonacci Retracement</option>
-          <option value="43">Post 44 · Cup and Handle Pattern</option>
+        <optgroup label="📓 Module 5 — Reading the Market (Posts 37–46)">
+          <option value="36">Post 37 · What Is an ETF?</option>
+          <option value="37">Post 38 · What Is a SIP?</option>
+          <option value="38">Post 39 · What Is Dollar Cost Averaging?</option>
+          <option value="39">Post 40 · How to Read a Stock Price?</option>
+          <option value="40">Post 41 · What Is 52-Week High and Low?</option>
+          <option value="41">Post 42 · What Is Volume?</option>
+          <option value="42">Post 43 · What Is Liquidity?</option>
+          <option value="43">Post 44 · What Are Circuit Breakers?</option>
+          <option value="44">Post 45 · What Is Upper and Lower Circuit?</option>
+          <option value="45">Post 46 · What Is a Stock Market Index?</option>
         </optgroup>
-        <optgroup label="📓 Module 6 — Fundamental Analysis (Posts 45–52)">
-          <option value="44">Post 45 · Fundamental vs Technical Analysis</option>
-          <option value="45">Post 46 · What Is P/E Ratio?</option>
-          <option value="46">Post 47 · How to Read an Annual Report</option>
-          <option value="47">Post 48 · What Is EPS?</option>
-          <option value="48">Post 49 · What Is Free Cash Flow?</option>
-          <option value="49">Post 50 · What Is Debt-to-Equity Ratio?</option>
-          <option value="50">Post 51 · How to Read Earnings Reports</option>
-          <option value="51">Post 52 · Sector Rotation Explained</option>
+        <optgroup label="💰 Module 6 — Risk and Money (Posts 47–54)">
+          <option value="46">Post 47 · What Is Risk vs Reward?</option>
+          <option value="47">Post 48 · What Is Volatility?</option>
+          <option value="48">Post 49 · What Is a Stop Loss?</option>
+          <option value="49">Post 50 · What Is a Take Profit Target?</option>
+          <option value="50">Post 51 · What Is Position Sizing?</option>
+          <option value="51">Post 52 · What Is Capital Preservation?</option>
+          <option value="52">Post 53 · What Is the Risk-Reward Ratio?</option>
+          <option value="53">Post 54 · How Much Money to Start Investing?</option>
         </optgroup>
-        <optgroup label="🚀 Module 7 — Advanced and Viral (Posts 53–65)">
-          <option value="52">Post 53 · Options — Calls and Puts</option>
-          <option value="53">Post 54 · What Is Margin Trading?</option>
-          <option value="54">Post 55 · Psychology of Trading</option>
-          <option value="55">Post 56 · Dollar Cost Averaging (SIP in Stocks)</option>
-          <option value="56">Post 57 · What Is Compound Interest?</option>
-          <option value="57">Post 58 · Value Investing vs Growth Investing</option>
-          <option value="58">Post 59 · Why Do Markets Crash?</option>
-          <option value="59">Post 60 · How the RBI Moves the Market</option>
-          <option value="60">Post 61 · How to Spot a Pump and Dump</option>
-          <option value="61">Post 62 · What Is Insider Trading?</option>
-          <option value="62">Post 63 · Biases That Destroy Wealth</option>
-          <option value="63">Post 64 · How to Build Your First Investment Plan</option>
-          <option value="64">Post 65 · The 5 Golden Rules of Investing in India</option>
+        <optgroup label="📊 Module 7 — Technical Analysis Basics (Posts 55–66)">
+          <option value="54">Post 55 · What Is Technical Analysis?</option>
+          <option value="55">Post 56 · What Is a Candlestick Chart?</option>
+          <option value="56">Post 57 · Bullish and Bearish Candlestick Patterns</option>
+          <option value="57">Post 58 · What Is Support and Resistance?</option>
+          <option value="58">Post 59 · What Is a Trend Line?</option>
+          <option value="59">Post 60 · What Is an Uptrend and Downtrend?</option>
+          <option value="60">Post 61 · What Is a Moving Average?</option>
+          <option value="61">Post 62 · What Is SMA vs EMA?</option>
+          <option value="62">Post 63 · What Is the RSI Indicator?</option>
+          <option value="63">Post 64 · What Is the MACD Indicator?</option>
+          <option value="64">Post 65 · What Are Bollinger Bands?</option>
+          <option value="65">Post 66 · What Is the Volume Indicator?</option>
+        </optgroup>
+        <optgroup label="📈 Module 8 — Chart Patterns (Posts 67–74)">
+          <option value="66">Post 67 · Head and Shoulders Pattern</option>
+          <option value="67">Post 68 · Double Top and Double Bottom</option>
+          <option value="68">Post 69 · Cup and Handle Pattern</option>
+          <option value="69">Post 70 · Flag and Pennant Pattern</option>
+          <option value="70">Post 71 · Triangle Pattern</option>
+          <option value="71">Post 72 · What Is a Breakout?</option>
+          <option value="72">Post 73 · What Is a Breakdown?</option>
+          <option value="73">Post 74 · Fibonacci Retracement</option>
+        </optgroup>
+        <optgroup label="🔬 Module 9 — Fundamental Analysis (Posts 75–86)">
+          <option value="74">Post 75 · What Is Fundamental Analysis?</option>
+          <option value="75">Post 76 · What Is the P/E Ratio?</option>
+          <option value="76">Post 77 · What Is EPS?</option>
+          <option value="77">Post 78 · What Is the P/B Ratio?</option>
+          <option value="78">Post 79 · What Is Return on Equity (ROE)?</option>
+          <option value="79">Post 80 · What Is Debt-to-Equity Ratio?</option>
+          <option value="80">Post 81 · What Is Free Cash Flow?</option>
+          <option value="81">Post 82 · Revenue vs Profit</option>
+          <option value="82">Post 83 · How to Read a Balance Sheet?</option>
+          <option value="83">Post 84 · How to Read an Earnings Report?</option>
+          <option value="84">Post 85 · What Is a Business Moat?</option>
+          <option value="85">Post 86 · How to Analyse a Stock Before Buying?</option>
+        </optgroup>
+        <optgroup label="🚀 Module 10 — Advanced Concepts (Posts 87–96)">
+          <option value="86">Post 87 · Fundamental vs Technical Analysis</option>
+          <option value="87">Post 88 · What Is Sector Rotation?</option>
+          <option value="88">Post 89 · What Are Defensive Stocks?</option>
+          <option value="89">Post 90 · Growth Stocks vs Value Stocks</option>
+          <option value="90">Post 91 · What Is Short Selling?</option>
+          <option value="91">Post 92 · What Is Margin Trading?</option>
+          <option value="92">Post 93 · What Is Options Trading?</option>
+          <option value="93">Post 94 · What Are Calls and Puts?</option>
+          <option value="94">Post 95 · What Is a Futures Contract?</option>
+          <option value="95">Post 96 · What Is a Derivatives Market?</option>
+        </optgroup>
+        <optgroup label="🇮🇳 Module 11 — Indian Economy and Markets (Posts 97–106)">
+          <option value="96">Post 97 · How Does RBI Policy Affect Markets?</option>
+          <option value="97">Post 98 · What Is Inflation and How It Affects Stocks?</option>
+          <option value="98">Post 99 · What Is GDP and Why It Matters?</option>
+          <option value="99">Post 100 · What Are FII and DII?</option>
+          <option value="100">Post 101 · What Is a Budget and How It Affects Markets?</option>
+          <option value="101">Post 102 · What Is a Recession?</option>
+          <option value="102">Post 103 · What Are Government Bonds in India?</option>
+          <option value="103">Post 104 · Role of the Finance Ministry in Markets</option>
+          <option value="104">Post 105 · How Global Markets Affect India?</option>
+          <option value="105">Post 106 · Impact of Oil Prices on Indian Stocks</option>
+        </optgroup>
+        <optgroup label="🧠 Module 12 — Psychology and Mistakes (Posts 107–114)">
+          <option value="106">Post 107 · What Is Trading Psychology?</option>
+          <option value="107">Post 108 · What Is FOMO in Investing?</option>
+          <option value="108">Post 109 · What Is Loss Aversion?</option>
+          <option value="109">Post 110 · What Is Confirmation Bias?</option>
+          <option value="110">Post 111 · What Is Herd Mentality?</option>
+          <option value="111">Post 112 · What Is Overtrading?</option>
+          <option value="112">Post 113 · 10 Most Common Mistakes Indian Beginners Make</option>
+          <option value="113">Post 114 · How to Build a Trading Routine?</option>
+        </optgroup>
+        <optgroup label="⭐ Module 13 — Viral and Special (Posts 115–120)">
+          <option value="114">Post 115 · Why Do Stock Markets Crash?</option>
+          <option value="115">Post 116 · How to Spot a Pump and Dump?</option>
+          <option value="116">Post 117 · What Is Insider Trading?</option>
+          <option value="117">Post 118 · The 5 Golden Rules of Investing in India</option>
+          <option value="118">Post 119 · How to Build Your First Investment Plan?</option>
+          <option value="119">Post 120 · What Is Financial Freedom?</option>
         </optgroup>
       </select>
     </div>
@@ -123,7 +189,7 @@
   <div class="out-wrap" id="outWrap">
     <div class="out-head">
       <div class="out-title" id="outTitle">TODAY'S CAROUSEL</div>
-      <button class="gbtn2" id="dlBtn" onclick="downloadAll()">⬇ Download All 6 Slides (PDF)</button>
+      <button class="gbtn2" id="dlBtn" onclick="downloadAll()">⬇ Download All 6 Slides</button>
     </div>
     <div class="slides-row" id="slidesRow"></div>
   </div>
