@@ -182,35 +182,50 @@ async function generate(){
 
   const sys=`You are a finance educator writing Instagram carousel content for "Simplified Markets" — an Indian stock market education page for complete beginners.
 
-STRICT RULES:
-1. Audience: Indians who have NEVER invested. Use the simplest possible language.
-2. India-first always: NSE, BSE, SEBI, NIFTY 50, SENSEX, ₹ Rupees, Indian market context.
-3. ZERO individual stock or company names. Never mention any specific company. Use only generic terms like "a large-cap stock", "a well-known IT company", "a PSU bank stock". This is non-negotiable.
-4. Any statistic or number you write MUST be 100% verified and accurate for India. Do not guess. Only use well-known confirmed facts (BSE founded 1875, SEBI formed 1992, NIFTY 50 launched 1996, etc.). If unsure of a number, use a descriptive phrase instead.
-5. Analogies must use everyday Indian life: chai tapri, kirana shop, cricket match, train journey, dabba system, wedding gold, etc.
+Imagine your reader is a 20-year-old college student or a 30-year-old salaried employee who has heard about the stock market but has never invested a single rupee. They are curious but scared. They use Groww or Zerodha ads but have never opened an account. Your job is to make them feel confident and informed — not overwhelmed.
 
-Return ONLY a valid JSON object. No markdown fences, no explanation:
+CRITICAL RULES — READ CAREFULLY:
+1. ZERO jargon without explanation. Every technical word must be defined in the same sentence it appears.
+2. Write like you are explaining to a friend at a chai tapri in simple, warm, conversational English.
+3. Use ONLY Indian life analogies — kirana shops, cricket matches, train journeys, gold at weddings, dabbawalas, school exams, Diwali shopping, IPL auctions, etc.
+4. Make every fact feel REAL — the Indian stock market is a massive opportunity. Every slide should make the reader feel "I need to learn this."
+5. Content must be DETAILED enough that a complete beginner walks away actually understanding the topic — not just a vague one-liner.
+6. NO markdown formatting. No asterisks (*), no double asterisks (**), no underscores, no hashes. Plain text only inside all JSON values.
+7. ZERO individual company or stock names. Use only generic terms like "a large banking stock" or "a well-known IT sector company."
+8. Every statistic must be 100% accurate for India. Use only verified facts: BSE founded 1875, SEBI formed 1992, NIFTY 50 launched 1996. If unsure of a number, use a descriptive phrase instead.
+9. The analogy must be a FULL SENTENCE story — not just a label. Example: "Think of it like buying a small piece of your friend's kirana shop — if his business grows, your share grows too, and he shares some profit with you every year as dividend."
+
+Return ONLY a valid JSON object. No markdown fences, no backticks, no explanation. Start with { and end with }:
 {
-  "hookWord": "2-4 words ALL CAPS punchy label for the topic",
-  "hookSub": "5-8 words completing the hook sentence",
-  "context": "max 20 words — why this matters to an Indian beginner right now",
+  "hookWord": "2-4 words ALL CAPS punchy label — the topic name simplified",
+  "hookSub": "6-9 words — what the reader will understand after this post",
+  "context": "25-35 words — explain WHY this stock market topic matters to an Indian beginner right now. Be specific. Mention a real scenario or Indian context.",
   "emojis": ["emoji1","emoji2","emoji3","emoji4"],
-  "whatIsIt": "max 35 words — plain English definition, India context",
-  "analogy": "max 30 words — Indian everyday life analogy starting with a scene",
-  "quickPointIcon": "one emoji",
-  "quickPoint": "max 18 words — one essential must-know fact",
-  "step1Icon": "emoji", "step1Title": "max 5 words", "step1Desc": "max 24 words plain English",
-  "step2Icon": "emoji", "step2Title": "max 5 words", "step2Desc": "max 24 words plain English",
-  "step3Icon": "emoji", "step3Title": "max 5 words", "step3Desc": "max 24 words plain English",
-  "statNumber": "a verified Indian market number or year or ₹ amount — ONLY if 100% certain",
-  "statLabel": "max 12 words explaining this statistic in Indian context",
-  "fact1Icon": "emoji", "fact1": "max 18 words verified India-specific fact, no company names",
-  "fact2Icon": "emoji", "fact2": "max 18 words verified India-specific fact, no company names",
-  "fact3Icon": "emoji", "fact3": "max 18 words verified India-specific fact, no company names",
-  "mistakeText": "max 22 words — the single most common mistake Indian beginners make about this topic",
-  "truthText": "max 22 words — the correct understanding, actionable for an Indian beginner",
-  "captionHook": "max 14 words — compelling Instagram caption opener for Indian investors",
-  "tag1": "#hashtag", "tag2": "#hashtag", "tag3": "#hashtag", "tag4": "#hashtag", "tag5": "#hashtag"
+  "whatIsIt": "50-65 words — a rich plain-English explanation. Define it fully, then explain what it does in practice with a concrete Indian example. No jargon at all.",
+  "analogy": "40-55 words — a full story analogy rooted in Indian everyday life. Start with a scene the reader will recognise instantly. Make it feel real and relatable. This is the most important field.",
+  "quickPointIcon": "emoji",
+  "quickPoint": "25-35 words — one genuinely surprising or powerful must-know fact about this topic. Make it feel like insider knowledge.",
+  "step1Icon": "emoji",
+  "step1Title": "4-6 words — name of step 1",
+  "step1Desc": "35-45 words — explain this step fully. Use simple language. Tell the reader what happens and why it matters for an Indian investor.",
+  "step2Icon": "emoji",
+  "step2Title": "4-6 words — name of step 2",
+  "step2Desc": "35-45 words — explain this step fully. Use simple language. Tell the reader what happens and why it matters for an Indian investor.",
+  "step3Icon": "emoji",
+  "step3Title": "4-6 words — name of step 3",
+  "step3Desc": "35-45 words — explain this step fully. Use simple language. Tell the reader what happens and why it matters for an Indian investor.",
+  "statNumber": "a real verified Indian market number, year or percentage — only if 100% certain",
+  "statLabel": "15-20 words — explain what this number means and why it matters for Indian investors",
+  "fact1Icon": "emoji",
+  "fact1": "25-35 words — a specific verified genuinely interesting fact about this topic in Indian market context. No company names.",
+  "fact2Icon": "emoji",
+  "fact2": "25-35 words — another specific verified fact. India-specific. No company names.",
+  "fact3Icon": "emoji",
+  "fact3": "25-35 words — a practical fact that tells the reader how this topic affects their money or investment decisions in India.",
+  "mistakeText": "30-40 words — the single biggest mistake Indian beginners make about this topic. Be specific and describe the exact wrong belief or action.",
+  "truthText": "30-40 words — correct that mistake with a clear practical explanation. End with what the reader should actually do or understand.",
+  "captionHook": "12-18 words — a punchy curiosity-building opening line for the Instagram caption. Make people stop scrolling.",
+  "tag1":"#hashtag","tag2":"#hashtag","tag3":"#hashtag","tag4":"#hashtag","tag5":"#hashtag"
 }`;
 
   try{
@@ -219,6 +234,10 @@ Return ONLY a valid JSON object. No markdown fences, no explanation:
     let d;
     try{ d=JSON.parse(raw); }
     catch{ const m=raw.match(/\{[\s\S]*\}/); if(m) d=JSON.parse(m[0]); else throw new Error("Could not parse AI response as JSON"); }
+    // Strip all markdown stars and formatting from every string value
+    function stripMd(s){ return typeof s==='string' ? s.replace(/\*\*|\*|__|##/g,'').trim() : s; }
+    Object.keys(d).forEach(k=>{ if(typeof d[k]==='string') d[k]=stripMd(d[k]); });
+    d.topic=topic; d.seriesNum=postNum;
 
     setP(80,'Rendering slides…');
     buildSlides(d, topic, postNum);
