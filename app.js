@@ -1,26 +1,151 @@
 const TOPICS = [
-  "What Is the Stock Market?","What Is a Stock or Share?","What Is a Stock Exchange? (NSE and BSE)",
-  "Who Are the Players in the Market?","How Does Trading Actually Work?","What Is SEBI and Why It Matters?",
-  "What Is the NIFTY 50?","What Is the SENSEX?","What Is Market Capitalisation?","What Is an IPO?",
-  "What Is a Dividend?","What Is a Demat Account?","What Is a Portfolio?","Buy vs Sell vs Hold",
-  "Bulls vs Bears — Market Moods Explained","How to Read a Stock Price","What Are Market Hours in India?",
-  "What Is Volume and Liquidity?","What Is an ETF?","What Is a Mutual Fund?","What Is an Index Fund?",
-  "Risk vs Reward — The Golden Rule","Types of Orders: Market, Limit, Stop Loss","Bid-Ask Spread Explained Simply",
-  "What Is the Circuit Breaker Rule?","What Is Short Selling?","What Is Intraday Trading?",
-  "What Is Delivery Trading?","What Is Swing Trading?","What Is Position Sizing?",
-  "Stop Loss and Take Profit Strategy","What Is a Trading Journal?","What Is Technical Analysis?",
-  "Candlestick Charts Explained","Support and Resistance Levels","Trend Lines — How to Draw Them",
-  "Moving Averages: SMA vs EMA","What Is RSI?","What Is MACD?","Bollinger Bands Explained",
-  "Head and Shoulders Pattern","Double Top and Double Bottom","Fibonacci Retracement",
-  "Cup and Handle Pattern","Fundamental vs Technical Analysis","What Is P/E Ratio?",
-  "How to Read an Annual Report","What Is EPS?","What Is Free Cash Flow?",
-  "What Is Debt-to-Equity Ratio?","How to Read Earnings Reports","Sector Rotation Explained",
-  "Options — Calls and Puts","What Is Margin Trading?","Psychology of Trading",
-  "Dollar Cost Averaging (SIP in Stocks)","What Is Compound Interest?","Value Investing vs Growth Investing",
-  "Why Do Markets Crash?","How the RBI Moves the Market","How to Spot a Pump and Dump",
-  "What Is Insider Trading?","Biases That Destroy Wealth","How to Build Your First Investment Plan",
-  "The 5 Golden Rules of Investing in India"
+  // ── MODULE 1: What Is the Market? (Posts 1–8) ──
+  "What Is the Stock Market?",
+  "What Is a Stock or Share?",
+  "What Is a Stock Exchange? (NSE and BSE)",
+  "Who Are the Players in the Stock Market?",
+  "How Does Trading Actually Work?",
+  "What Is SEBI and Why Does It Matter?",
+  "What Is a Bull Market and Bear Market?",
+  "What Is Market Sentiment?",
+
+  // ── MODULE 2: Indian Market Foundations (Posts 9–18) ──
+  "What Is the NIFTY 50?",
+  "What Is the SENSEX?",
+  "What Is Market Capitalisation?",
+  "What Is an IPO?",
+  "What Is a Demat Account?",
+  "What Is a Trading Account?",
+  "What Is a Broker and How to Choose One?",
+  "What Are Market Timings in India?",
+  "What Is the Difference Between NSE and BSE?",
+  "What Is SEBI and How Does It Protect Investors?",
+
+  // ── MODULE 3: Stock Basics (Posts 19–28) ──
+  "What Is a Dividend?",
+  "What Is a Bonus Share?",
+  "What Is a Stock Split?",
+  "What Is a Rights Issue?",
+  "What Is a Portfolio?",
+  "What Is Diversification?",
+  "Buy vs Sell vs Hold — What Should You Do?",
+  "What Is a Large Cap, Mid Cap and Small Cap Stock?",
+  "What Are Penny Stocks?",
+  "What Is the Difference Between Equity and Debt?",
+
+  // ── MODULE 4: Types of Investing (Posts 29–36) ──
+  "What Is Long-Term Investing?",
+  "What Is Short-Term Trading?",
+  "What Is Intraday Trading?",
+  "What Is Delivery Trading?",
+  "What Is Swing Trading?",
+  "What Is Positional Trading?",
+  "What Is a Mutual Fund?",
+  "What Is an Index Fund?",
+
+  // ── MODULE 5: Reading the Market (Posts 37–46) ──
+  "What Is an ETF?",
+  "What Is a SIP (Systematic Investment Plan)?",
+  "What Is Dollar Cost Averaging?",
+  "How to Read a Stock Price?",
+  "What Is 52-Week High and Low?",
+  "What Is Volume in the Stock Market?",
+  "What Is Liquidity?",
+  "What Are Circuit Breakers in Indian Markets?",
+  "What Is the Upper and Lower Circuit?",
+  "What Is a Stock Market Index?",
+
+  // ── MODULE 6: Risk and Money (Posts 47–54) ──
+  "What Is Risk vs Reward?",
+  "What Is Volatility?",
+  "What Is a Stop Loss?",
+  "What Is a Take Profit Target?",
+  "What Is Position Sizing?",
+  "What Is Capital Preservation?",
+  "What Is the Risk-Reward Ratio?",
+  "How Much Money Do You Need to Start Investing in India?",
+
+  // ── MODULE 7: Technical Analysis Basics (Posts 55–66) ──
+  "What Is Technical Analysis?",
+  "What Is a Candlestick Chart?",
+  "What Are Bullish and Bearish Candlestick Patterns?",
+  "What Is Support and Resistance?",
+  "What Is a Trend Line?",
+  "What Is an Uptrend and Downtrend?",
+  "What Is a Moving Average?",
+  "What Is SMA vs EMA?",
+  "What Is the RSI Indicator?",
+  "What Is the MACD Indicator?",
+  "What Are Bollinger Bands?",
+  "What Is the Volume Indicator?",
+
+  // ── MODULE 8: Chart Patterns (Posts 67–74) ──
+  "What Is the Head and Shoulders Pattern?",
+  "What Is a Double Top and Double Bottom?",
+  "What Is the Cup and Handle Pattern?",
+  "What Is a Flag and Pennant Pattern?",
+  "What Is a Triangle Pattern?",
+  "What Is a Breakout in Trading?",
+  "What Is a Breakdown in Trading?",
+  "What Is Fibonacci Retracement?",
+
+  // ── MODULE 9: Fundamental Analysis (Posts 75–86) ──
+  "What Is Fundamental Analysis?",
+  "What Is the P/E Ratio?",
+  "What Is EPS (Earnings Per Share)?",
+  "What Is the P/B Ratio?",
+  "What Is Return on Equity (ROE)?",
+  "What Is Debt-to-Equity Ratio?",
+  "What Is Free Cash Flow?",
+  "What Is Revenue vs Profit?",
+  "How to Read a Company Balance Sheet?",
+  "How to Read an Earnings Report?",
+  "What Is a Moat in Business?",
+  "How to Analyse a Stock Before Buying?",
+
+  // ── MODULE 10: Advanced Concepts (Posts 87–96) ──
+  "What Is Fundamental vs Technical Analysis?",
+  "What Is Sector Rotation?",
+  "What Are Defensive Stocks?",
+  "What Are Growth Stocks vs Value Stocks?",
+  "What Is Short Selling?",
+  "What Is Margin Trading?",
+  "What Is Options Trading?",
+  "What Are Calls and Puts?",
+  "What Is a Futures Contract?",
+  "What Is a Derivatives Market?",
+
+  // ── MODULE 11: The Indian Economy & Markets (Posts 97–106) ──
+  "How Does RBI Policy Affect the Stock Market?",
+  "What Is Inflation and How Does It Affect Stocks?",
+  "What Is GDP and Why Does It Matter for Investors?",
+  "What Are FII and DII and How Do They Move Markets?",
+  "What Is a Budget and How Does It Affect the Market?",
+  "What Is a Recession and How to Invest During One?",
+  "What Are Government Bonds and T-Bills in India?",
+  "What Is the Role of the Finance Ministry in Markets?",
+  "How Do Global Markets Affect Indian Markets?",
+  "What Is the Impact of Oil Prices on Indian Stocks?",
+
+  // ── MODULE 12: Psychology and Mistakes (Posts 107–114) ──
+  "What Is Trading Psychology?",
+  "What Is FOMO in Investing?",
+  "What Is Loss Aversion and Why It Kills Returns?",
+  "What Is Confirmation Bias in Investing?",
+  "What Is Herd Mentality in the Stock Market?",
+  "What Is Overtrading and How to Avoid It?",
+  "The 10 Most Common Mistakes Indian Beginners Make?",
+  "How to Build a Trading Routine That Works?",
+
+  // ── MODULE 13: Viral and Special Topics (Posts 115–120) ──
+  "Why Do Stock Markets Crash?",
+  "How to Spot a Pump and Dump Scheme?",
+  "What Is Insider Trading and Is It Legal?",
+  "The 5 Golden Rules of Investing in India",
+  "How to Build Your First Investment Plan in India?",
+  "What Is Financial Freedom and How to Achieve It?"
 ];
+
 
 function getAutoIdx(){ let i=parseInt(localStorage.getItem('sm_idx')||'0'); return i>=TOPICS.length?0:i; }
 function advanceIdx(){ localStorage.setItem('sm_idx',(getAutoIdx()+1)%TOPICS.length); }
@@ -293,23 +418,15 @@ function copyCaption(){
 }
 
 /* ── DOWNLOAD — works natively when hosted on real domain ── */
+// Shared: render one slide to canvas and return PNG blob
+// Single click — downloads all 6 slides as individual PNGs one after another
 async function downloadAll(){
   const btn = document.getElementById('dlBtn');
   btn.disabled = true;
 
-  try {
-    // Slide dimensions: 432 x 540 px
-    // PDF page size: same ratio — use mm (432/540 * 100 = 80 x 100mm)
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: [108, 135]   // 432x540 at 4px per mm = 108x135 mm
-    });
-
-    for(let i = 0; i < 6; i++){
-      btn.textContent = `⏳ Rendering slide ${i+1} of 6…`;
-
+  for(let i = 0; i < 6; i++){
+    btn.textContent = `⏳ Saving slide ${i+1} of 6…`;
+    try {
       const el = document.getElementById('slide-'+i);
       const canvas = await html2canvas(el, {
         scale: 3,
@@ -320,23 +437,18 @@ async function downloadAll(){
         width: 432,
         height: 540
       });
-
-      const imgData = canvas.toDataURL('image/jpeg', 0.92);
-
-      if(i > 0) pdf.addPage([108, 135], 'portrait');
-      pdf.addImage(imgData, 'JPEG', 0, 0, 108, 135);
-
-      await new Promise(r => setTimeout(r, 300));
+      const link = document.createElement('a');
+      link.download = `SM-slide-${i+1}.png`;
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      await new Promise(r => setTimeout(r, 900));
+    } catch(e){
+      console.error('Slide '+i+' error:', e);
     }
-
-    btn.textContent = '💾 Saving PDF…';
-    pdf.save('SimplifiedMarkets-Carousel.pdf');
-
-  } catch(e) {
-    console.error('PDF error:', e);
-    alert('Error creating PDF: ' + e.message);
   }
 
-  btn.textContent = '⬇ Download All 6 Slides (PDF)';
+  btn.textContent = '⬇ Download All 6 Slides';
   btn.disabled = false;
 }
