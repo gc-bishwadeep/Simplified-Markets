@@ -289,17 +289,19 @@ function buildSlide2(d){
     ${tb()}
     <div class="s2-tag">WHAT IS IT?</div>
     <div class="s2-title">Understanding<br><span class="hl">${esc(d.hookWord)}</span></div>
-    <div class="s2-def-box">
-      <div class="s2-def-label">📖 DEFINITION</div>
-      <div class="s2-def-text">${esc(d.whatIsIt)}</div>
-    </div>
-    <div class="s2-analogy-box">
-      <div class="s2-analogy-label">💡 THINK OF IT LIKE THIS</div>
-      <div class="s2-analogy-text">${esc(d.analogy)}</div>
-    </div>
-    <div class="s2-point">
-      <span style="font-size:18px;flex-shrink:0;">${d.quickPointIcon||'⚡'}</span>
-      <span class="s2-point-text">${esc(d.quickPoint)}</span>
+    <div class="s2-body">
+      <div class="s2-def-box">
+        <div class="s2-def-label">📖 DEFINITION</div>
+        <div class="s2-def-text">${esc(d.whatIsIt)}</div>
+      </div>
+      <div class="s2-analogy-box">
+        <div class="s2-analogy-label">💡 THINK OF IT LIKE THIS</div>
+        <div class="s2-analogy-text">${esc(d.analogy)}</div>
+      </div>
+      <div class="s2-point">
+        <span style="font-size:17px;flex-shrink:0;margin-top:1px;">${d.quickPointIcon||'⚡'}</span>
+        <span class="s2-point-text">${esc(d.quickPoint)}</span>
+      </div>
     </div>
     <div class="s2-swipe">Swipe ➜</div>
   </div>`;
