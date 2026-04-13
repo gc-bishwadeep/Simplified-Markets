@@ -94,17 +94,19 @@ body { background:#030710; color:#E8EDF5; font-family:'Barlow',sans-serif; min-h
 .slide.s2 { background:linear-gradient(160deg,#08142A 0%,#060E20 100%); }
 .s2-stripe { position:absolute; top:0; left:0; right:0; height:3px; background:var(--teal); z-index:5; }
 .s2-tag { position:absolute; top:58px; left:16px; z-index:10; font-size:9px; font-weight:800; letter-spacing:3.5px; color:var(--teal); text-transform:uppercase; }
-.s2-title { position:absolute; top:72px; left:16px; right:16px; z-index:10; font-family:'Bebas Neue',sans-serif; font-size:34px; letter-spacing:1.5px; color:#fff; line-height:1.0; }
+.s2-title { position:absolute; top:72px; left:16px; right:16px; z-index:10; font-family:'Bebas Neue',sans-serif; font-size:30px; letter-spacing:1.5px; color:#fff; line-height:1.0; }
 .s2-title .hl { color:var(--teal); }
-.s2-def-box { position:absolute; top:148px; left:14px; right:14px; z-index:10; background:rgba(31,191,150,.08); border:1.5px solid rgba(31,191,150,.25); border-radius:14px; padding:16px 18px; }
-.s2-def-label { font-size:9px; font-weight:800; color:var(--teal); letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; }
-.s2-def-text { font-size:14px; font-weight:700; color:#fff; line-height:1.5; }
-.s2-analogy-box { position:absolute; top:292px; left:14px; right:14px; z-index:10; background:rgba(247,183,49,.07); border:1px solid rgba(247,183,49,.2); border-radius:14px; padding:14px 18px; }
-.s2-analogy-label { font-size:9px; font-weight:800; color:var(--gold); letter-spacing:3px; text-transform:uppercase; margin-bottom:5px; }
-.s2-analogy-text { font-size:13px; font-weight:600; color:rgba(255,255,255,.8); line-height:1.45; }
-.s2-point { position:absolute; top:422px; left:14px; right:14px; z-index:10; display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.04); border-radius:10px; padding:10px 14px; }
-.s2-point-text { font-size:12px; font-weight:700; color:rgba(255,255,255,.7); line-height:1.4; }
-.s2-swipe { position:absolute; bottom:18px; right:16px; z-index:10; font-size:11px; font-weight:700; color:var(--gold); letter-spacing:1px; }
+/* flex column — stacks all 3 blocks with even breathing room */
+.s2-body { position:absolute; top:130px; left:14px; right:14px; bottom:36px; z-index:10; display:flex; flex-direction:column; gap:10px; }
+.s2-def-box { background:rgba(31,191,150,.08); border:1.5px solid rgba(31,191,150,.25); border-radius:13px; padding:12px 15px; flex:1.4; overflow:hidden; }
+.s2-def-label { font-size:8px; font-weight:800; color:var(--teal); letter-spacing:3px; text-transform:uppercase; margin-bottom:6px; }
+.s2-def-text { font-size:12px; font-weight:700; color:#fff; line-height:1.5; }
+.s2-analogy-box { background:rgba(247,183,49,.07); border:1px solid rgba(247,183,49,.2); border-radius:13px; padding:12px 15px; flex:1.3; overflow:hidden; }
+.s2-analogy-label { font-size:8px; font-weight:800; color:var(--gold); letter-spacing:3px; text-transform:uppercase; margin-bottom:5px; }
+.s2-analogy-text { font-size:11.5px; font-weight:600; color:rgba(255,255,255,.8); line-height:1.45; }
+.s2-point { display:flex; align-items:flex-start; gap:10px; background:rgba(255,255,255,.04); border-radius:10px; padding:9px 13px; flex:0 0 auto; }
+.s2-point-text { font-size:11px; font-weight:700; color:rgba(255,255,255,.7); line-height:1.4; }
+.s2-swipe { position:absolute; bottom:14px; right:16px; z-index:10; font-size:11px; font-weight:700; color:var(--gold); letter-spacing:1px; }
 
 /* SLIDE 3 */
 .slide.s3 { background:#060E22; }
@@ -165,3 +167,7 @@ body { background:#030710; color:#E8EDF5; font-family:'Barlow',sans-serif; min-h
 .s6-tags { position:absolute; top:382px; left:14px; right:14px; z-index:10; display:flex; gap:7px; flex-wrap:wrap; justify-content:center; }
 .s6-tag { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:999px; padding:4px 11px; font-size:9px; font-weight:700; color:rgba(255,255,255,.45); letter-spacing:.5px; }
 .s6-handle { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); z-index:10; font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px; color:rgba(255,255,255,.25); white-space:nowrap; }
+
+.gbtn3 { background:transparent; color:var(--teal); border:1.5px solid var(--teal); border-radius:8px; padding:9px 18px; font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1px; cursor:pointer; transition:all .2s; }
+.gbtn3:hover:not(:disabled) { background:rgba(31,191,150,.1); }
+.gbtn3:disabled { opacity:.4; cursor:not-allowed; }
